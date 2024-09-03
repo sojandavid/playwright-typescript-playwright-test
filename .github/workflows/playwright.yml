@@ -16,7 +16,7 @@ jobs:
   build:
     # Specify the operating system for this job
     runs-on: ubuntu-latest
-    
+
     # Define the steps to execute in this job
     steps:
       # Step to checkout the source code from the repository
@@ -50,29 +50,12 @@ jobs:
         # This step should always run, even if previous steps fail
         if: always()
 
-      # Check if HTML report exists
-      - name: Check if HTML report exists
-        run: |
-          if [ -d "html-report" ]; then
-            echo "HTML report exists."
-          else
-            echo "HTML report does not exist. Exiting..."
-            exit 1
-          fi
-        if: always()
-
-      # Step to zip html-report folder
-      - name: Zip HTML report
-        run: zip -r html-report.zip html-report
-        # This step should always run, even if previous steps fail
-        if: always()
-
       # Step to upload artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: html-report
-          path: html-report.zip
+          name: OrtoniHtmlReport
+          path: OrtoniHtmlReport.html
           if-no-files-found: error
         if: always()
 

@@ -4,6 +4,10 @@ pipeline {
         buildDiscarder logRotator(numToKeepStr: '2', artifactNumToKeepStr: '2')
    }
 
+   environment {
+            PATH = "/usr/local/bin/npm"
+    }
+
    agent any
    
    stages {

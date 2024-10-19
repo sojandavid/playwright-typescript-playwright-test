@@ -19,7 +19,7 @@ pipeline {
          steps {
             // sh 'npm ci'
             // sh 'export npm_config_ENV="qa"'
-            sh 'npm install -D @playwright/test@latest'
+            // sh 'npm install -D @playwright/test@latest'
             sh 'export npm_config_ENV="qa"; npm run test:serial'
       }
       }

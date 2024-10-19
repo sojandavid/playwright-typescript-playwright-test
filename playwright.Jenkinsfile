@@ -19,8 +19,9 @@ pipeline {
          steps {
             // sh 'npm ci'
             // sh 'export npm_config_ENV="qa"'
-            sh 'export npm_config_ENV="qa"; npm run test:serial'
-         }
+            // sh 'export npm_config_ENV="qa"; npm run test:serial'
+            sh 'npm run test:serial'
+      }
       }
    }
 }

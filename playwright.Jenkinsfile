@@ -9,7 +9,6 @@ pipeline {
    stages {
       stage('Playwright Test') {
          steps {
-            sh '/usr/local/bin/npm'
             sh 'npm ci'
             sh 'npx playwright test Login.test.ts --project=Chrome'
          }

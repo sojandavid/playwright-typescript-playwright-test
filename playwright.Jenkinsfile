@@ -18,6 +18,7 @@ pipeline {
       stage('Playwright Test') {
          steps {
             sh 'npm ci'
+            sh 'export npm_config_ENV="qa"'
             sh 'npx playwright test Login.test.ts --project=Chrome'
          }
       }

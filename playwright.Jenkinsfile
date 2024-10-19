@@ -12,12 +12,13 @@ pipeline {
       nodejs "nodejs"
    }
 
-   agent any
+   // agent any
+   agent { docker { image 'mcr.microsoft.com/playwright:v1.48.1-noble' } }
    
    stages {
       stage('Playwright Test') {
          steps {
-            // sh 'npm ci'
+            sh 'npm ci'
             // sh 'export npm_config_ENV="qa"'
             // sh 'npm install -D @playwright/test@latest'
             sh 'export npm_config_ENV="qa"; npm run test:serial'

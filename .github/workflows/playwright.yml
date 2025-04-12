@@ -21,13 +21,13 @@ jobs:
     steps:
       # Step to checkout the source code from the repository
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step to set up the Node.js version
       - name: Install node js v20
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: lts/*
 
       # Step to install Node.js dependencies
       - name: Install dependencies
@@ -35,7 +35,7 @@ jobs:
 
       # Step to install Chrome browser for Playwright
       - name: Install Chrome browser for Playwright
-        run: npx playwright install chrome
+        run: npx playwright install --with-deps
 
       # Step to run tests with qa as environment variable similarly we can define qa|dev|qaApi|devApi
       - name: Run tests
@@ -52,7 +52,7 @@ jobs:
 
       # Step to upload artifact
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: OrtoniHtmlReport
           path: OrtoniHtmlReport.html

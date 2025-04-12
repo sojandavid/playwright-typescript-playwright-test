@@ -35,7 +35,7 @@ jobs:
 
       # Step to install Chrome browser for Playwright
       - name: Install Chrome browser for Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install chrome
 
       # Step to run tests with qa as environment variable similarly we can define qa|dev|qaApi|devApi
       - name: Run tests
@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: html-report
-          path: html-report/OrtoniHtmlReport.html
+          path: html-report/index.html
           if-no-files-found: error
         if: always()
 

@@ -25,6 +25,7 @@
   "author": "Akshay Pai",
   "license": "MIT",
   "dependencies": {
+    "@playwright/test": "^1.51.1",
     "@axe-core/playwright": "^4.10.0",
     "@types/crypto-js": "^4.2.2",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
@@ -40,8 +41,5 @@
     "pg": "^8.13.0",
     "typescript": "^5.6.2",
     "winston": "^3.14.2"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.51.1"
   }
 }
